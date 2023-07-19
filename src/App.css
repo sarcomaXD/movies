@@ -1,38 +1,65 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.carousel {
+  overflow: hidden;
+  &:hover {
+    .prevBtn,
+    .nextBtn {
+      opacity: 1;
+    }
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+}
+
+.title {
+  text-align: center;
+  margin-top: 0;
+}
+a {
+  text-decoration: none;
+}
+
+.btn {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  opacity: 0;
+  width: 3rem;
+  height: 480px;
+  position: absolute;
+}
+.prevBtn {
+  left: 3%;
+}
+.nextBtn {
+  right: 3%;
 }
 
-.App-link {
-  color: #61dafb;
+.arrow-prev,
+.arrow-next {
+  position: relative;
+  float: left;
+  width: 100px;
+  height: 100px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.arrow-prev::after {
+  position: absolute;
+  content: "";
+  width: 3rem; /* 사이즈 */
+  height: 3rem; /* 사이즈 */
+  border-top: 0.3em solid #fff; /* 선 두께 */
+  border-right: 0.3em solid #fff; /* 선 두께 */
+  transform: rotate(225deg); /* 각도 */
+}
+
+.arrow-next::after {
+  position: absolute;
+  content: "";
+  width: 3rem; /* 사이즈 */
+  height: 3rem; /* 사이즈 */
+  border-top: 0.3em solid #fff; /* 선 두께 */
+  border-right: 0.3em solid #fff; /* 선 두께 */
+  transform: rotate(45deg); /* 각도 */
 }
